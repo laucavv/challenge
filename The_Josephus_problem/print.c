@@ -6,15 +6,18 @@
  * Return: the number of nodes
  */
 
-size_t print_listint(const stack_t *h)
+size_t print_listint(stack_t *h)
 {
 	size_t length = 0;
+	stack_t *tmp = h;
 
 	do
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d", tmp->n);
+		tmp = tmp->next;
 		length++;
-	} while (h && h != h->next);
+	}while (tmp != h);
+	printf("\n");
+
 	return (length);
 }

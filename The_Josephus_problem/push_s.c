@@ -20,19 +20,18 @@ void push_s(stack_t **stack, unsigned int line_number)
 	{
 
 		*stack = end_int;
-		end_int->next =(*stack);
+		end_int->next = end_int;
 
 
 	}
 	else
 	{
 		tmp = *stack;
-		while (tmp->next != NULL)
+		while (tmp->next != (*stack))
 		{
 			tmp = tmp->next;
 		}
 		tmp->next = end_int;
 		end_int->next = *stack;
 	}
-	printf("termina push");
 }
