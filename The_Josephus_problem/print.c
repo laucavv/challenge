@@ -10,11 +10,11 @@ size_t print_listint(const stack_t *h)
 {
 	size_t length = 0;
 
-	while (h)
+	do
 	{
 		printf("%d\n", h->n);
 		h = h->next;
 		length++;
-	}
+	} while (h && h != h->next);
 	return (length);
 }

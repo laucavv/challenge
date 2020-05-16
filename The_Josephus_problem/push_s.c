@@ -7,7 +7,7 @@
  */
 void push_s(stack_t **stack, unsigned int line_number)
 {
-	stack_t *end_int = NULL, *tmp;
+	stack_t *end_int = NULL, *tmp = NULL;
 
 	end_int = malloc(sizeof(stack_t));
 
@@ -16,10 +16,12 @@ void push_s(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	end_int->n = line_number;
-	end_int->next = NULL;
 	if (*stack == NULL)
 	{
+
 		*stack = end_int;
+		end_int->next =(*stack);
+
 
 	}
 	else
@@ -30,7 +32,7 @@ void push_s(stack_t **stack, unsigned int line_number)
 			tmp = tmp->next;
 		}
 		tmp->next = end_int;
+		end_int->next = *stack;
 	}
-	printf("llego\n");
-
+	printf("termina push");
 }

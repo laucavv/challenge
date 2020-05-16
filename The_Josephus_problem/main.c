@@ -26,7 +26,7 @@ int main()
 		push_s(&(head), i);
 		i++;
 	}
-	print_listint(head);
+	//print_listint(head);
 
 	if (line == NULL)
 	{
