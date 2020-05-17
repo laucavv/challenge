@@ -9,11 +9,12 @@
 size_t len_l(stack_t *h)
 {
 	size_t length = 0;
+	stack_t *tmp = h;
 
-	while (h)
+	do
 	{
-		h = h->next;
+		tmp = tmp->next;
 		length++;
-	}
+	}while (tmp != h);
 	return (length);
 }

@@ -13,7 +13,7 @@ size_t print_listint(stack_t *h)
 
 	do
 	{
-		printf("%d", tmp->n);
+		printf(" | %d", tmp->n);
 		tmp = tmp->next;
 		length++;
 	}while (tmp != h);
